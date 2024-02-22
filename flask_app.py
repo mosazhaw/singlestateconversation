@@ -1,7 +1,6 @@
 from flask import Flask, jsonify, render_template, request
 
 from chatbot.chatbot import Chatbot
-import git
 
 PYTHONANYWHERE_USERNAME = "carvice"
 PYTHONANYWHERE_WEBAPPNAME = "mysite"
@@ -102,9 +101,3 @@ def reset(type_id: str, user_id: str):
         "assistant_says": assistant_says_list,
     }
     return jsonify(response)
-
-@app.route('/update_server', methods=['POST'])
-def webhook():
-        if request.method == 'POST':
-            repo = git.Repo('path/to/git_repo')
-            origin = repo.remotes.originorigin.pull()
